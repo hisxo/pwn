@@ -1,0 +1,21 @@
+secrets:
+  secret_token: 1234567890abcdefghijklmnopqrstuvwxyz
+  api_key: abcd1234efgh5678ijkl9012mnop3456
+  access_key: AKIAIOSFODNN7EXAMPLE
+  secret_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+nginx:
+  listen: 80
+  server_name: project.pwn.bzh
+  location: / {
+    proxy_pass http://localhost:8080;
+  }
+
+docker:
+  image: my-image:1.0
+  ports:
+    - "80:80"
+  environment:
+    API_KEY: ${secrets.api_key}
+  volumes:
+    - ./data:/var/www/data
