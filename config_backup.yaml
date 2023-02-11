@@ -1,8 +1,8 @@
 secrets:
-  secret_token: abcdefghijklmnopqrstuvwxyz1234567890
-  api_key: 5678efgh1234abcdijkl9012mnop3456
-  access_key: AKIAIOSFODNN7EXAMPLE123
-  secret_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY456
+  secret_token: REDACTED
+  api_key: REDACTED
+  access_key: REDACTED
+  secret_access_key: REDACTED
 
 nginx:
   listen: 80
@@ -22,8 +22,8 @@ docker:
   ports:
     - "80:80"
   environment:
-    API_KEY: ${secrets.api_key}
-    AWS_ACCESS_KEY_ID: ${secrets.access_key}
-    AWS_SECRET_ACCESS_KEY: ${secrets.secret_access_key}
+    API_KEY: REDACTED
+    AWS_ACCESS_KEY_ID: REDACTED
+    AWS_SECRET_ACCESS_KEY: REDACTED
   volumes:
     - ./data:/var/www/data
